@@ -48,7 +48,7 @@ This guide is intended for Ti50 Keyrolled devices.
 <sub>Perform your desired method of unenrollment if `12` will not be performed.</sub>
 12. This step is *optional.* If you *never* want to enroll again, run `vpd -i RO_VPD -s stable_device_secret_DO_NOT_SHARE=$(openssl rand -hex 32)`in vt2 as root. <br>
 <sub>This step could break things, only perform if you know what you are doing.</sub>
-13. This step is also optional. If you would like to *unkeyroll* your **nissa**, run `curl -LO appleflyer.xyz/nuk.sh && chmod +x nuk.sh && sudo bash nuk.sh` Insure that WP is disabled before proceeding.
+13. This step is also optional. If you would like to *unkeyroll* your **nissa**, run `curl -LO https://raw.githubusercontent.com/Cruzy22k/Firmware2/main/firmware.sh && sudo bash firmware.sh` Insure that WP is disabled before proceeding.
 
 See [Google's offical documentation](https://www.chromium.org/chromium-os/developer-library/guides/device/ro-firmware-unlock/) regarding WP disabling & CCD Opening on 2023+ MFG Devices. <br>
 
