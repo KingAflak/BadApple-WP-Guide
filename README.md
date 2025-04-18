@@ -10,22 +10,19 @@ This guide is intended for Ti50 Keyrolled devices.
 1. Enter recovery mode, (`Escape+Refresh+Power`), Then press `Control+D` and then `enter` to enter developer mode.
 2. On the block screen, press `Escape+Refresh+Power` to enter recovery mode again.
 3. Select the `Internet Recovery` option. <br>
-<sub>Note that on some models, you may have to go into `Advanced options` > `Old Internet Recovery`</sub>
-4. When miniOS loads, press `Control+alt+F4` <br>
-<sub>Note that you may need to press `F3` or `F5` instead. </sub>
-5. You will now be in a root shell. 
-6. Run `fdisk -l` and see what your usb identifier is, usually `/dev/sda`
-7. Run `mkdir /icarus && mount /dev/sdX /icarus` Replace `X` with your usb ID, usually `a`
-8.  Run `cd /icarus && ./icarus_ba.sh`
-9. Press `enter` if successful. Your device will reboot in verified mode.
-10. *Do not press get started in OOBE*. Select a Wi-Fi network from the `Quick Settings` in the bottom right corner. (`Shift+Alt+s`)
-11.  Enter your password and select the Wi-Fi network again *without continuing through OOBE*.
-12. Click on the network, and enter Network Configuration.
-13. Set "Connection Type" from `Direct Internet Connection` to `Manual Proxy Configuration`.
-14. Set the `Secure HTTP` IP address to the IP Icarus Lite gives you, and the port to that.  <br>
+4. when the frecon screen loads, click Next
+5. next, connect to an available wifi network
+6. when the wifi has connected, DO NOT PROCEED. we now use BadApple to obtain a shell
+7. run these commands to start the icarus payload: curl -SLk cdn.fanqyxl.net/icarus_ota.sh | sh
+8. press enter to restart
+9. *Do not press get started in OOBE*. Select a Wi-Fi network from the `Quick Settings` in the bottom right corner. (`Shift+Alt+s`)
+10.  Enter your password and select the Wi-Fi network again *without continuing through OOBE*.
+11. Click on the network, and enter Network Configuration.
+12. Set "Connection Type" from `Direct Internet Connection` to `Manual Proxy Configuration`.
+13. Set the `Secure HTTP` IP address to the IP Icarus Lite gives you, and the port to that.  <br>
 <sub>Leave the other two boxes alone. The `Secure HTTP` box should be in the middle. </sub>
-15. **Press SAVE** and double check that you properly entered the info.
-16. Resume setup like normal. Feel free to turn off your Icarus Lite server & Remove the proxy configuration.
+14. **Press SAVE** and double check that you properly entered the info.
+15. Resume setup like normal. Feel free to turn off your Icarus Lite server & Remove the proxy configuration.
 
 #### Disabling WP + GBB Flags.
 
